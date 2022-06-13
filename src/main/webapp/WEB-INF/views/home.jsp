@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-<%@include file="include/mainfooter.jsp"%>
+<%@include file="include/main_footer.jsp"%>
 
 
     <div class="control-sidebar-bg"></div>
