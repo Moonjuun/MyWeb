@@ -7,18 +7,16 @@
 
     <insert id="create">
         INSERT INTO tbl_article (
-                                  article_no
-                                , title
+
+                                 title
                                 , content
                                 , writer
-                                , regdate
                                 , viewcnt
         ) VALUES (
-                     #{articleNo}
-                 , #{title}
+
+                  #{title}
                  , #{content}
                  , #{writer}
-                 , #{regDate}
                  , #{viewCnt}
                  )
     </insert>
