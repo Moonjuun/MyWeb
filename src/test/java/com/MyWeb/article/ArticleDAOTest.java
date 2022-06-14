@@ -34,7 +34,7 @@ public class ArticleDAOTest {
 
     @Test
     public void testRead() throws Exception {
-        logger.info(articleDAO.read(1).toString());
+        logger.info(articleDAO.read(2).toString());
     }
 
     @Test

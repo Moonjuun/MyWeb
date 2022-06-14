@@ -32,7 +32,7 @@ public class ArticleController {
 
         logger.info("write GET...");
 
-        return "/article/write";
+        return "article/write";
     }
 
     // 등록 처리
@@ -55,7 +55,7 @@ public class ArticleController {
         logger.info("list ...");
         model.addAttribute("articles", articleService.listAll());
 
-        return "/article/list";
+        return "article/list";
     }
 
     // 조회 페이지 이동
@@ -66,7 +66,7 @@ public class ArticleController {
         logger.info("read ...");
         model.addAttribute("article", articleService.read(articleNo));
 
-        return "/article/read";
+        return "article/read";
     }
 
     // 수정 페이지 이동
@@ -77,7 +77,7 @@ public class ArticleController {
         logger.info("modifyGet ...");
         model.addAttribute("article", articleService.read(articleNo));
 
-        return "/article/modify";
+        return "article/modify";
     }
 
     // 수정 처리

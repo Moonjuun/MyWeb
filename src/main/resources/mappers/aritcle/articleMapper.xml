@@ -7,17 +7,15 @@
 
     <insert id="create">
         INSERT INTO tbl_article (
-
-                                 title
+                                  article_no
+                                , title
                                 , content
                                 , writer
-                                , viewcnt
         ) VALUES (
-
-                  #{title}
+                     #{articleNo}
+                 , #{title}
                  , #{content}
                  , #{writer}
-                 , #{viewCnt}
                  )
     </insert>
 
@@ -68,8 +66,8 @@
         <result property="title" column="title" />
         <result property="content" column="content" />
         <result property="writer" column="writer" />
-        <result property="regDate" column="regdate" />
-        <result property="viewCnt" column="viewcnt" />
+        <result property="regDate" column="reg_date" />
+        <result property="viewCnt" column="view_cnt" />
     </resultMap>
 
 </mapper>

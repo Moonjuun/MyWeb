@@ -1,7 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %><!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%--head.jsp--%>
 <%@ include file="../include/head.jsp"%>
