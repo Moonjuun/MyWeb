@@ -34,6 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main content -->
         <section class="content container-fluid">
+
             <div class="col-lg-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
@@ -70,15 +71,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </div>
             </div>
-            <script>
-                var result = "${msg}";
-                if (result == "regSuccess") {
-                    alert("게시글 등록이 완료되었습니다.");
-                } else if (result == "modSuccess") {
-                    alert("게시글 수정이 완료되었습니다.");
-                } else if (result == "delSuccess") {
-                    alert("게시글 삭제가 완료되었습니다.");
-                }
-            </script>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <%@include file="../include/main_footer.jsp"%>
+
+
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+<%@include file="../include/plugin_js.jsp"%>
+<script>
+    var result = "${msg}";
+if (result == "regSuccess") {
+    alert("게시글 등록이 완료되었습니다.");
+} else if (result == "modSuccess") {
+    alert("게시글 수정이 완료되었습니다.");
+} else if (result == "delSuccess") {
+    alert("게시글 삭제가 완료되었습니다.");
+}
+</script>
 </body>
 </html>

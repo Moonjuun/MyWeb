@@ -1,4 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <%--head.jsp--%>
 <%@ include file="../include/head.jsp"%>
@@ -31,6 +34,7 @@
 
         <!-- Main content -->
         <section class="content container-fluid">
+
             <div class="col-lg-12">
                 <form role="form" id="writeForm" method="post" action="${path}/article/write">
                     <div class="box box-primary">
