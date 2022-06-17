@@ -7,15 +7,15 @@
 
     <insert id="create">
         INSERT INTO tbl_article (
-                                  article_no
-                                , title
+                                title
                                 , content
                                 , writer
+                                , viewcnt
         ) VALUES (
-                     #{articleNo}
-                 , #{title}
+                  #{title}
                  , #{content}
                  , #{writer}
+                 , #{viewCnt}
                  )
     </insert>
 
@@ -46,7 +46,7 @@
         WHERE article_no = #{articleNo}
     </delete>
 
-    <select id="listAll" resultType="ArticleVO">
+    <select id="listAll" resultMap="ArticleResultMap">
         <![CDATA[
         SELECT
             article_no,
@@ -57,7 +57,7 @@
             viewcnt
         FROM tbl_article
         WHERE article_no > 0
-        ORDER BY article_no DESC, regdate DESC
+        ORDER BY article_no DESC
         ]]>
     </select>
 
@@ -66,8 +66,8 @@
         <result property="title" column="title" />
         <result property="content" column="content" />
         <result property="writer" column="writer" />
-        <result property="regDate" column="reg_date" />
-        <result property="viewCnt" column="view_cnt" />
+        <result property="regDate" column="regDate" />
+        <result property="viewCnt" column="viewCnt" />
     </resultMap>
 
 </mapper>

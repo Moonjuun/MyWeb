@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <td>${article.articleNo}</td>
                                     <td><a href="${path}/article/read?articleNo=${article.articleNo}">${article.title}</a></td>
                                     <td>${article.writer}</td>
-                                    <td><fmt:formatDate value="${article.regDate}" pattern="yyyy-MM-dd a HH:mm"/></td>
+                                    <td><fmt:formatDate value="${article.regDate}" pattern="yyyy.MM.dd a HH:mm" /></td>
                                     <td><span class="badge bg-red">${article.viewCnt}</span></td>
                                 </tr>
                             </c:forEach>
@@ -65,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="box-footer">
                         <div class="pull-right">
                             <button type="button" class="btn btn-success btn-flat" id="writeBtn">
-                                <i class="fa fa-pencil"></i> 글쓰기
+                                <i class="fa fa-pencil"></i><a href="${path}/article/write"><span style="color:white">글쓰기</span></a>
                             </button>
                         </div>
                     </div>

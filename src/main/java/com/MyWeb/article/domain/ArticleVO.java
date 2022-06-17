@@ -1,6 +1,8 @@
 package com.MyWeb.article.domain;
 
-import java.sql.Date;
+
+import java.util.Date;
+//import java.sql.Date; 쓰면 날짜는 잘뜨는데 시간이 00시 00분으로 뜸!!
 
 public class ArticleVO {
 
