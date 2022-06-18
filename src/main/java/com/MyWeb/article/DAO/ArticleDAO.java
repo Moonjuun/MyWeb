@@ -16,4 +16,7 @@ public interface ArticleDAO {
 
     List<ArticleVO> listAll() throws Exception;
 
+    List<ArticleVO> listPaging(int page) throws Exception;
+
+
 }

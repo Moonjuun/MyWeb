@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.inject.Inject;
 
+import java.util.List;
+
 import static java.time.Instant.now;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,11 +27,14 @@ public class ArticleDAOTest {
 
     @Test
     public void testCreate() throws Exception {
-        ArticleVO article = new ArticleVO();
-        article.setTitle("새로운 글 작성 테스트 제목");
-        article.setContent("새로운 글 작성 테스트 내용");
-        article.setWriter("새로운 글 작성자");
-        articleDAO.create(article);
+        for (int i = 1; i <= 1000; i++) {
+            ArticleVO articleVO = new ArticleVO();
+            articleVO.setTitle(i+ "번째 글 제목입니다...");
+            articleVO.setContent(i+ "번재 글 내용입니다...");
+            articleVO.setWriter("user0"+(i%10));
+
+            articleDAO.create(articleVO);
+        }
     }
 
     @Test
@@ -49,5 +54,18 @@ public class ArticleDAOTest {
     @Test
     public void testDelete() throws Exception {
         articleDAO.delete(1);
+    }
+
+    @Test
+    public void testListPaging() throws Exception {
+
+        int page = 3;
+
+        List<ArticleVO> articles = articleDAO.listPaging(page);
+
+        for (ArticleVO article : articles) {
+            logger.info(article.getArticleNo() + ":" + article.getTitle());
+        }
+
     }
 }
