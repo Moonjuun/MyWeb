@@ -9,17 +9,15 @@
 
     <!--정적자원 매핑-->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/bower_components/**" location="/resources/bower_components/"/>
+    <mvc:resources mapping="/plugins/**" location="/resources/plugins/"/>
+    <mvc:resources mapping="/dist/**" location="/resources/dist/"/>
 
     <!--
     이놈 에러 잡는다고 진짜 고생함ㅠ
     https://m.blog.naver.com/javaking75/220074858236  참고 사이트
     -->
     <mvc:resources mapping="/article/**" location="/resources/"/>
-
-    <mvc:resources mapping="/bower_components/**" location="/resources/bower_components/"/>
-    <mvc:resources mapping="/plugins/**" location="/resources/plugins/"/>
-    <mvc:resources mapping="/dist/**" location="/resources/dist/"/>
-
 
     <!--viewResolver 설정-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -2,6 +2,7 @@ package com.MyWeb.article.service;
 
 import com.MyWeb.article.DAO.ArticleDAO;
 import com.MyWeb.article.domain.ArticleVO;
+import com.MyWeb.commons.paging.Criteria;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -41,5 +42,15 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<ArticleVO> listAll() throws Exception {
         return articleDAO.listAll();
+    }
+
+    @Override
+    public List<ArticleVO> listCriteria(Criteria criteria) throws Exception {
+        return articleDAO.listCriteria(criteria);
+    }
+
+    @Override
+    public int countArticles(Criteria criteria) throws Exception {
+        return articleDAO.countArticles(criteria);
     }
 }

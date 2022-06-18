@@ -2,6 +2,8 @@ package com.MyWeb.article.controller;
 
 import com.MyWeb.article.domain.ArticleVO;
 import com.MyWeb.article.service.ArticleService;
+import com.MyWeb.commons.paging.Criteria;
+import com.MyWeb.commons.paging.PageMaker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -102,5 +104,27 @@ public class ArticleController {
         redirectAttributes.addFlashAttribute("msg", "delSuccess");
 
         return "redirect:/article/list";
+    }
+
+    @RequestMapping(value = "/listCriteria", method = RequestMethod.GET)
+    public String listCriteria(Model model, Criteria criteria) throws Exception {
+        logger.info("listCriteria ...");
+        model.addAttribute("articles", articleService.listCriteria(criteria));
+        return "/article/list_criteria";
+    }
+
+    @RequestMapping(value = "/listPaging", method = RequestMethod.GET)
+    public String listPaging(Model model, Criteria criteria) throws Exception {
+        logger.info("listPaging ...");
+
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCriteria(criteria);
+        // 수정
+        pageMaker.setTotalCount(articleService.countArticles(criteria));
+
+        model.addAttribute("articles", articleService.listCriteria(criteria));
+        model.addAttribute("pageMaker", pageMaker);
+
+        return "/article/list_paging";
     }
 }
